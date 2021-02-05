@@ -15,8 +15,8 @@ const { getDetailController, postDetailController } = require('./controllers/det
 const { addMessage, getMessageByClient } = require('./controllersMongo/message');
 
 const app = express();
-const port = 3001;
-const chatPort = 3002;
+const port = process.env.PORT || 3001;
+const chatPort = process.env.PORT || 3002;
 
 const server = http.createServer(app);
 const io = socketIo(server);
